@@ -3,6 +3,13 @@ import Image from "next/image";
 import Reveal from "@/components/Reveal";
 import AboutStickman from "@/components/AboutStickman";
 
+/* =========================================================
+   LINKS
+========================================================= */
+
+const GMAIL_URL =
+  "https://mail.google.com/mail/?view=cm&fs=1&to=anass23guendaoui@gmail.com";
+
 const skills = [
   "C",
   "C++",
@@ -23,28 +30,26 @@ export default function About() {
       id="about"
     >
       {/* =====================================================
-          SECTION TITLE
+          TITLE
       ====================================================== */}
 
       <Reveal>
         <div className="reference-section-title">
           <span />
 
-          <h2>
-            About
-          </h2>
+          <h2>About</h2>
 
           <span />
         </div>
       </Reveal>
 
       {/* =====================================================
-          ABOUT CONTENT
+          CONTENT
       ====================================================== */}
 
       <div className="about-content">
         {/* ===================================================
-            PROFILE PHOTO
+            PHOTO
         ==================================================== */}
 
         <Reveal
@@ -63,7 +68,7 @@ export default function About() {
         </Reveal>
 
         {/* ===================================================
-            ABOUT INFORMATION
+            INFORMATION
         ==================================================== */}
 
         <Reveal
@@ -156,7 +161,6 @@ export default function About() {
                   />
 
                   <path d="M7.5 10v7" />
-
                   <path d="M7.5 7v.01" />
 
                   <path
@@ -171,11 +175,13 @@ export default function About() {
                 </svg>
               </a>
 
-              {/* Email */}
+              {/* Email -> Gmail Web */}
 
               <a
-                href="mailto:anass23guendaoui@gmail.com"
-                aria-label="Email"
+                href={GMAIL_URL}
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Email Anass"
               >
                 <svg
                   viewBox="0 0 24 24"
@@ -216,9 +222,7 @@ export default function About() {
               target="_blank"
               rel="noreferrer"
             >
-              <span>
-                View Resume
-              </span>
+              <span>View Resume</span>
 
               <svg
                 viewBox="0 0 24 24"
@@ -234,9 +238,6 @@ export default function About() {
 
       {/* =====================================================
           STICKMAN
-
-          Completely independent from profile image.
-          Enters from the right side of the About section.
       ====================================================== */}
 
       <AboutStickman />
