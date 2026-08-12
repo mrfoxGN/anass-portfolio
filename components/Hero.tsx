@@ -1,3 +1,4 @@
+import HeroSketch from "@/components/HeroSketch";
 import Reveal from "@/components/Reveal";
 import TypingRole from "@/components/TypingRole";
 
@@ -7,12 +8,14 @@ export default function Hero() {
       className="hero"
       id="home"
     >
-      <div className="hero-center">
-        {/* TITLE */}
+      {/* Animated pencil drawing */}
 
-        <Reveal
-          y={6}
-        >
+      <HeroSketch />
+
+      {/* Main hero content */}
+
+      <div className="hero-center">
+        <Reveal y={6}>
           <h1 className="hero-title">
             Hi, I&apos;m{" "}
             <span className="hero-name">
@@ -21,16 +24,12 @@ export default function Hero() {
           </h1>
         </Reveal>
 
-        {/* ROLE */}
-
         <Reveal
           delay={0.08}
           y={6}
         >
           <TypingRole />
         </Reveal>
-
-        {/* SMALL SPECIALIZATION LINE */}
 
         <Reveal
           delay={0.16}

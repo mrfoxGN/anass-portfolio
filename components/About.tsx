@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 import Reveal from "@/components/Reveal";
+import AboutStickman from "@/components/AboutStickman";
 
 const skills = [
   "C",
@@ -21,40 +22,49 @@ export default function About() {
       className="about"
       id="about"
     >
+      {/* =====================================================
+          SECTION TITLE
+      ====================================================== */}
+
       <Reveal>
         <div className="reference-section-title">
           <span />
-          <h2>About</h2>
+
+          <h2>
+            About
+          </h2>
+
           <span />
         </div>
       </Reveal>
 
+      {/* =====================================================
+          ABOUT CONTENT
+      ====================================================== */}
+
       <div className="about-content">
-        {/* =============================================
-            PHOTO
-        ============================================== */}
+        {/* ===================================================
+            PROFILE PHOTO
+        ==================================================== */}
 
         <Reveal
           delay={0.08}
           y={16}
         >
           <div className="about-photo-wrapper">
-            <div className="about-photo-frame">
-              <Image
-                src="/images/anassguendaoui.jpeg"
-                alt="Anass Guendaoui"
-                width={400}
-                height={400}
-                className="about-photo"
-                priority={false}
-              />
-            </div>
+            <Image
+              src="/images/anassguendaoui.jpeg"
+              alt="Anass Guendaoui"
+              width={400}
+              height={400}
+              className="about-photo"
+            />
           </div>
         </Reveal>
 
-        {/* =============================================
-            INFO
-        ============================================== */}
+        {/* ===================================================
+            ABOUT INFORMATION
+        ==================================================== */}
 
         <Reveal
           delay={0.12}
@@ -62,24 +72,22 @@ export default function About() {
         >
           <div className="about-info">
             <p className="about-intro">
-              I&apos;m Anass Guendaoui, a Software
-              Engineering student and Full-Stack
-              Developer interested in backend
-              development, systems, networking and
+              I&apos;m Anass Guendaoui, a Software Engineering
+              student and Full-Stack Developer interested in
+              backend development, systems, networking and
               modern web technologies.
             </p>
 
             <p className="about-intro">
-              I enjoy building practical software,
-              learning new technologies and working on
-              projects ranging from web applications to
-              low-level networking and Docker
-              infrastructure.
+              I enjoy building practical software, learning new
+              technologies and working on projects ranging from
+              web applications to low-level networking and
+              Docker infrastructure.
             </p>
 
-            {/* =============================================
+            {/* ===============================================
                 SOCIALS
-            ============================================== */}
+            ================================================ */}
 
             <div className="about-socials">
               {/* GitHub */}
@@ -89,13 +97,41 @@ export default function About() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="GitHub"
-                title="GitHub"
               >
                 <svg
                   viewBox="0 0 24 24"
                   aria-hidden="true"
                 >
-                  <path d="M12 2.8a9.3 9.3 0 0 0-2.94 18.12c.46.08.63-.2.63-.44v-1.64c-2.56.56-3.1-1.08-3.1-1.08-.42-1.07-1.03-1.35-1.03-1.35-.84-.57.06-.56.06-.56.93.07 1.42.96 1.42.96.83 1.42 2.17 1.01 2.7.77.08-.6.32-1.01.59-1.24-2.04-.23-4.18-1.02-4.18-4.56 0-1.01.36-1.83.95-2.47-.1-.23-.41-1.17.09-2.44 0 0 .78-.25 2.55.94a8.9 8.9 0 0 1 4.64 0c1.77-1.19 2.55-.94 2.55-.94.5 1.27.19 2.21.09 2.44.59.64.95 1.46.95 2.47 0 3.55-2.15 4.33-4.2 4.56.33.29.63.85.63 1.72v2.42c0 .24.16.52.63.43A9.3 9.3 0 0 0 12 2.8Z" />
+                  <path
+                    d="
+                      M12 2
+                      C6.48 2 2 6.58 2 12.24
+                      c0 4.53 2.87 8.37 6.84 9.73
+                      .5.1 .68-.22 .68-.49
+                      0-.24-.01-1.04-.02-1.89
+                      -2.78.62-3.37-1.2-3.37-1.2
+                      -.45-1.17-1.11-1.48-1.11-1.48
+                      -.91-.64.07-.63.07-.63
+                      1 .07 1.53 1.05 1.53 1.05
+                      .89 1.56 2.34 1.11 2.91.85
+                      .09-.66.35-1.11.64-1.36
+                      -2.22-.26-4.56-1.14-4.56-5.08
+                      0-1.12.39-2.04 1.03-2.76
+                      -.1-.26-.45-1.31.1-2.73
+                      0 0 .84-.28 2.75 1.05
+                      .8-.23 1.65-.35 2.5-.35
+                      .85 0 1.7.12 2.5.35
+                      1.91-1.33 2.75-1.05 2.75-1.05
+                      .55 1.42.2 2.47.1 2.73
+                      .64.72 1.03 1.64 1.03 2.76
+                      0 3.95-2.35 4.82-4.58 5.08
+                      .36.32.68.95.68 1.92
+                      0 1.39-.01 2.51-.01 2.85
+                      0 .28.18.61.69.49
+                      A10.25 10.25 0 0 0 22 12.24
+                      C22 6.58 17.52 2 12 2Z
+                    "
+                  />
                 </svg>
               </a>
 
@@ -106,7 +142,6 @@ export default function About() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="LinkedIn"
-                title="LinkedIn"
               >
                 <svg
                   viewBox="0 0 24 24"
@@ -120,10 +155,19 @@ export default function About() {
                     rx="2"
                   />
 
-                  <path d="M7 10v7" />
-                  <path d="M7 7.2v.2" />
-                  <path d="M11 17v-7" />
-                  <path d="M11 13.1c.7-2 5-2.3 5 1.1V17" />
+                  <path d="M7.5 10v7" />
+
+                  <path d="M7.5 7v.01" />
+
+                  <path
+                    d="
+                      M11 17v-7
+                      M11 13
+                      c0-1.7 1.1-3 2.8-3
+                      1.8 0 2.7 1.2 2.7 3.2
+                      V17
+                    "
+                  />
                 </svg>
               </a>
 
@@ -132,7 +176,6 @@ export default function About() {
               <a
                 href="mailto:anass23guendaoui@gmail.com"
                 aria-label="Email"
-                title="Email"
               >
                 <svg
                   viewBox="0 0 24 24"
@@ -143,17 +186,17 @@ export default function About() {
                     y="5"
                     width="18"
                     height="14"
-                    rx="1.5"
+                    rx="2"
                   />
 
-                  <path d="m4 7 8 6 8-6" />
+                  <path d="M4 7l8 6 8-6" />
                 </svg>
               </a>
             </div>
 
-            {/* =============================================
+            {/* ===============================================
                 SKILLS
-            ============================================== */}
+            ================================================ */}
 
             <div className="about-skills">
               {skills.map((skill) => (
@@ -163,29 +206,40 @@ export default function About() {
               ))}
             </div>
 
-            {/* =============================================
+            {/* ===============================================
                 RESUME
-            ============================================== */}
+            ================================================ */}
 
-          <a
-  href="/cv.pdf"
-  className="resume-button"
-  target="_blank"
-  rel="noreferrer"
->
-  <span>View Resume</span>
+            <a
+              href="/cv.pdf"
+              className="resume-button"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span>
+                View Resume
+              </span>
 
-  <svg
-    viewBox="0 0 24 24"
-    aria-hidden="true"
-  >
-    <path d="M7 17 17 7" />
-    <path d="M8 7h9v9" />
-  </svg>
-</a>
+              <svg
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path d="M7 17 17 7" />
+                <path d="M8 7h9v9" />
+              </svg>
+            </a>
           </div>
         </Reveal>
       </div>
+
+      {/* =====================================================
+          STICKMAN
+
+          Completely independent from profile image.
+          Enters from the right side of the About section.
+      ====================================================== */}
+
+      <AboutStickman />
     </section>
   );
 }

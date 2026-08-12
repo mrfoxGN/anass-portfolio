@@ -265,12 +265,13 @@ section,
 }
 
 /* =========================================================
-   HERO — POLISHED
+   HERO
 ========================================================= */
 
 .hero {
-  width: 100%;
+  position: relative;
 
+  width: 100%;
   min-height: 100vh;
 
   display: flex;
@@ -278,17 +279,67 @@ section,
   align-items: center;
   justify-content: center;
 
-  padding:
-    80px 45px;
+  overflow: hidden;
+
+  padding: 80px 45px;
 }
+
+
+/* =========================================================
+   HERO PENCIL DRAWING CANVAS
+========================================================= */
+
+.hero-sketch {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 0;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+
+  pointer-events: none;
+
+  color:
+    rgba(
+      58,
+      55,
+      50,
+      0.42
+    );
+}
+
+
+.hero-sketch svg {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+}
+
+
+/* =========================================================
+   HERO PENCIL DRAWING
+========================================================= */
+
+.hero-sketch path {
+  shape-rendering: geometricPrecision;
+}
+
 
 /* =========================================================
    HERO CENTER
 ========================================================= */
 
 .hero-center {
-  width: 100%;
+  position: relative;
 
+  z-index: 2;
+
+  width: 100%;
   max-width: 900px;
 
   display: flex;
@@ -303,6 +354,7 @@ section,
     translateY(-24px);
 }
 
+
 /* =========================================================
    HERO TITLE
 ========================================================= */
@@ -315,7 +367,11 @@ section,
     serif;
 
   font-size:
-    clamp(46px, 5vw, 66px);
+    clamp(
+      46px,
+      5vw,
+      66px
+    );
 
   font-weight: 700;
 
@@ -325,6 +381,7 @@ section,
 
   color: #292824;
 }
+
 
 /* =========================================================
    HERO NAME
@@ -337,6 +394,7 @@ section,
 
   color: #292824;
 }
+
 
 .hero-name::after {
   content: "";
@@ -351,13 +409,19 @@ section,
   height: 1px;
 
   background:
-    rgba(41, 40, 36, 0.55);
+    rgba(
+      41,
+      40,
+      36,
+      0.55
+    );
 
   transform:
     scaleX(0.82);
 
   transform-origin: center;
 }
+
 
 /* =========================================================
    TYPEWRITER
@@ -378,7 +442,11 @@ section,
     monospace;
 
   font-size:
-    clamp(20px, 2.1vw, 28px);
+    clamp(
+      20px,
+      2.1vw,
+      28px
+    );
 
   font-weight: 400;
 
@@ -386,6 +454,7 @@ section,
 
   color: #56534e;
 }
+
 
 /* =========================================================
    TYPEWRITER CURSOR
@@ -397,13 +466,21 @@ section,
   margin-left: 4px;
 
   color:
-    rgba(41, 40, 36, 0.68);
+    rgba(
+      41,
+      40,
+      36,
+      0.68
+    );
 
   font-weight: 300;
 
   animation:
-    cursorBlink 0.9s infinite;
+    cursorBlink
+    0.9s
+    infinite;
 }
+
 
 @keyframes cursorBlink {
   0%,
@@ -416,6 +493,7 @@ section,
     opacity: 0.15;
   }
 }
+
 
 /* =========================================================
    HERO SPECIALTIES
@@ -448,9 +526,15 @@ section,
   color: #8a867f;
 }
 
+
 .hero-specialty-dot {
   color:
-    rgba(41, 40, 36, 0.45);
+    rgba(
+      41,
+      40,
+      36,
+      0.45
+    );
 }
 /* =========================================================
    REFERENCE SECTION TITLE
@@ -494,7 +578,74 @@ section,
 
   color: #292824;
 }
+/* =========================================================
+   ABOUT
+   Allow space for the stickman scene
+========================================================= */
 
+.about {
+  position: relative;
+
+  /*
+   * Dedicated empty space below the normal About content.
+   * The stickman animation lives here.
+   */
+  padding-bottom: 260px;
+}
+
+
+/* =========================================================
+   ABOUT STICKMAN STAGE
+========================================================= */
+
+.about-stickman {
+  position: absolute;
+
+  z-index: 6;
+
+  /*
+   * IMPORTANT:
+   * Put him BELOW the About information instead of
+   * floating on top of the paragraphs.
+   */
+  top: auto;
+  bottom: 20px;
+
+  /*
+   * Still enters from the RIGHT side.
+   */
+  right: 20px;
+
+  width: 360px;
+  height: 430px;
+
+  overflow: visible;
+
+  pointer-events: none;
+
+  color:
+    rgba(
+      58,
+      55,
+      50,
+      0.78
+    );
+}
+
+
+.about-stickman svg {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: visible;
+}
+
+
+.about-stickman text {
+  user-select: none;
+}
 /* =========================================================
    ABOUT
 ========================================================= */
